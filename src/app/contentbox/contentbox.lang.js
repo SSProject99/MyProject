@@ -13,6 +13,7 @@ cancelButtonProps = {
 
 AllButtonProperties = {
     contentHeading,
+    contentText,
     saveButtonProps,
     cancelButtonProps
 }

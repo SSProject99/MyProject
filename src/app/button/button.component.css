@@ -1,0 +1,86 @@
+
+.ss-btn-pri {
+  appearance: button;
+  background-color: var(--ss-btn-color);
+  border: 1px solid var(--ss-btn-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 7px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  border-radius: 100px;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.ss-btn-pri:disabled {
+  opacity: .5;
+}
+
+.ss-btn-pri:focus {
+  outline: 0;
+}
+
+.ss-btn-pri:hover {
+  background-color: #0A46E4;
+  border-color: #0A46E4;
+}
+
+.ss-btn-pri:active {
+  background-color: #0039D7;
+  border-color: #0039D7;
+}
+
+
+
+.ss-btn-sec {
+  appearance: button;
+  background-color: #ffffff;
+  border: 1px solid var(--ss-btn-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--ss-btn-color);
+  cursor: pointer;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 7px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  border-radius: 50px;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.ss-btn-sec:disabled {
+  opacity: .5;
+}
+
+.ss-btn-sec:focus {
+  outline: 0;
+}
+
+.ss-btn-sec:hover {
+  background-color: #d8e1f8;
+  border-color: #0A46E4;
+}
+
+.ss-btn-sec:active {
+  background-color: #0039D7;
+  border-color: #0039D7;
+}

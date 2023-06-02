@@ -1,0 +1,3 @@
+contentHeading = "Weather";
+
+alert("Hello");

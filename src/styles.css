@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ss-btn-color: #038BD8;
+    --ss-btn-lite: #D1EEFF;
+    --ss-bck-lite: #F1FAFF;
+}
+
+button {
+    cursor: pointer;
+}

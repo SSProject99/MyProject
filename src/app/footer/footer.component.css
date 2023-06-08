@@ -6,17 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
 
-
-
-body {
-    margin: 0;
-    padding: 0;
-    background: rgba(219, 242, 255, .7);
-    box-sizing: border-box;
-    max-width: 100%;
-    max-height: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -78,7 +67,7 @@ button:focus {
 }
 
 .ss-btn-pri {
-    background: var(--ss-btn-color);
+    background: var(--button-pri);
     border-radius: 77px;
     box-sizing: border-box;
     color: #FFFFFF;
@@ -95,14 +84,14 @@ button:focus {
     min-width: 100px;
     word-break: break-word;
     border: 0;
-    box-shadow: var(--ss-btn-color) 0 10px 20px -10px;
+    box-shadow: var(--button-pri) 0 10px 20px -10px;
 }
 
 .ss-btn-sec {
     border-radius: 77px;
     background: #FFF;
     box-sizing: border-box;
-    color: var(--ss-btn-color);
+    color: var(--button-pri);
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
@@ -114,8 +103,8 @@ button:focus {
     touch-action: manipulation;
     min-width: fit-content;
     word-break: break-word;
-    border: var(--ss-btn-color) solid 1px;
-    box-shadow: rgba(var(--ss-btn-color), 0.5) 0 10px 12px -10px;
+    border: var(--button-pri) solid 1px;
+    box-shadow: rgba(var(--button-pri), 0.5) 0 10px 12px -10px;
 }
 
 .ss-btn-med {
@@ -127,7 +116,7 @@ button:focus {
     border-radius: 77px;
     background: #FFF;
     box-sizing: border-box;
-    color: var(--ss-btn-color);
+    color: var(--button-pri);
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
@@ -139,8 +128,8 @@ button:focus {
     touch-action: manipulation;
     min-width: fit-content;
     word-break: break-word;
-    border: var(--ss-btn-color) solid 1px;
-    box-shadow: rgba(var(--ss-btn-color), 0.5) 0 10px 12px -10px;
+    border: var(--button-pri) solid 1px;
+    box-shadow: rgba(var(--button-pri), 0.5) 0 10px 12px -10px;
     background: var(--ss-btn-lite);
     border: none;
 }
@@ -178,7 +167,7 @@ button:focus {
 
 
 
-.ss-footer {
+.footer-container {
     position: fixed;
     display: flex;
     justify-content: space-around;
@@ -187,7 +176,7 @@ button:focus {
     left: 0;
     right: 0;
     background: #fff;
-    /*  box-shadow: rgba(17, 17, 26, 0.05) 0px -2px 2px, rgba(17, 17, 26, 0.05) 0px -2px 2px;  */
+    box-shadow: rgba(17, 17, 26, 0.05) 0px -2px 2px, rgba(17, 17, 26, 0.05) 0px -2px 2px; 
 
 }
 
@@ -214,11 +203,11 @@ button:focus {
 }
 
 .ss-ftr-act {
-    color: var(--ss-btn-color);
+    color: var(--button-pri);
     opacity: 1;
 }
 
-.ss-footer>a>.material-icons {
+.footer-container>a>.material-icons {
     font-size: 25px;
 }
 

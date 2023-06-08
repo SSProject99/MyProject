@@ -1,16 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    opacity: .85;
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
-    --ss-btn-color: #038BD8;
-    --ss-btn-lite: #D1EEFF;
-    --ss-bck-lite: #F1FAFF;
+    --background-lite: rgb(247, 252, 255);
+    --background-dark: rgb(35, 7, 54);
+    --font-name: 'Poppins', sans-serif;
+    --heading-color: rgb(1, 31, 49);
+    --button-pri: rgb(3, 139, 216);
+    --button-pri-hover: rgb(3, 108, 168);
+    --button-pri-active: rgb(2, 79, 124);
+    --text-color: #5f5f5f;
+    --grey-lite: rgb(190, 190, 190);
+    --grey-lite-hover: rgb(172, 172, 172);
+    --grey-lite-active: rgb(136, 136, 136);
+}
+
+ng-view {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-lite);
+}
+
+body {
+    background-color: var(--background-lite);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+.all-containers {
+    width: 100%;
 }
 
 button {
     cursor: pointer;
+}
+
+
+@media screen and (min-width:700px){
+    .all-containers {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .encrypt-container, .result-box-container {
+        width: 50%;
+    } 
+}
+
+@media screen and (max-width:310px){
+    .action-box>button {
+        transform: scale(.8);
+    }
 }

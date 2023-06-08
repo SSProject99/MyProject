@@ -1,8 +1,8 @@
 
 .ss-btn-pri {
   appearance: button;
-  background-color: var(--ss-btn-color);
-  border: 1px solid var(--ss-btn-color);
+  background-color: var(--button-pri);
+  border: 1px solid var(--button-pri);
   border-radius: 4px;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -46,10 +46,10 @@
 .ss-btn-sec {
   appearance: button;
   background-color: #ffffff;
-  border: 1px solid var(--ss-btn-color);
+  border: 1px solid var(--button-pri);
   border-radius: 4px;
   box-sizing: border-box;
-  color: var(--ss-btn-color);
+  color: var(--button-pri);
   cursor: pointer;
   font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 14px;

@@ -1,0 +1,10 @@
+<div class="container-box">
+    <h3>{{resultHeading}}</h3>
+    <textarea #copyTextVal></textarea>
+    <div class="result-action-box">
+        <button (click)="copyResult(copyTextVal)">
+            <span class="material-symbols-outlined">{{copyIcon}}</span>
+            <span>{{copyMessage}}</span>
+        </button>
+    </div>
+</div>

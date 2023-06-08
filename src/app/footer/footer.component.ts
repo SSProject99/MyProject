@@ -15,16 +15,6 @@ export class FooterComponent implements OnInit {
     'name': 'Search',
     'active': false,
     'icon': 'search'
-  },
-  {
-    'name': 'Library',
-    'active': false,
-    'icon': 'book'
-  },
-  {
-    'name': 'Security',
-    'active': false,
-    'icon': 'lock'
   }];
 
   toggleIcon(icon: any) {

@@ -10,7 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContainerComponent } from './container/container.component';
 import { ResultboxComponent } from './resultbox/resultbox.component';
 import { DatabaseComponent } from './database/database.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { DatabaseComponent } from './database/database.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

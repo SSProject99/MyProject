@@ -1,1 +1,10 @@
-<p>database works!</p>
+<div *ngFor="let item of data">
+    {{ item.ngNameCol }}
+</div>
+<button (click)="displayDataFromDB()">Show</button>
+<div>
+    <input type="text" [(ngModel)]="ngNameCol" placeholder="Enter name">
+    <input type="text" [(ngModel)]="ngRollCol" placeholder="Enter name">
+    <button (click)="onSubmit()">Insert Data</button>
+  </div>
+  

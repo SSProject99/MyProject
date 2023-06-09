@@ -1,6 +1,6 @@
 
 contentHeading = "Weather";
-contentText = "Content content content content content content content content content content content content";
+contentText = "Content content content content content";
 saveButtonProps = {
   buttonText : "Save",
   buttonStyle : "ss-btn-pri",

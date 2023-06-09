@@ -9,6 +9,7 @@ import { ContentboxComponent } from './contentbox/contentbox.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContainerComponent } from './container/container.component';
 import { ResultboxComponent } from './resultbox/resultbox.component';
+import { DatabaseComponent } from './database/database.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ResultboxComponent } from './resultbox/resultbox.component';
     ContentboxComponent,
     FooterComponent,
     ContainerComponent,
-    ResultboxComponent
+    ResultboxComponent,
+    DatabaseComponent
   ],
   imports: [
     BrowserModule,

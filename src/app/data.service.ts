@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private fetchDataURL = 'http://localhost/AngularJSdatabase/fetchData.php';
-  private insertDataURL = 'http://localhost/AngularJSdatabase/insertData.php';
+  private fetchDataURL = 'http://localhost/AngularJSDatabase/AngularJSDatabase/fetchData.php';
+  private insertDataURL = 'http://localhost/AngularJSDatabase/AngularJSDatabase/insertData.php';
 
   constructor(private http: HttpClient) { }
 

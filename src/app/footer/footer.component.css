@@ -11,6 +11,10 @@
     box-shadow: rgba(17, 17, 26, 0.05) 0px -2px 2px, rgba(17, 17, 26, 0.05) 0px -2px 2px; 
 }
 
+.footer-link {
+    text-decoration: none;
+}
+
 .ss-ftr-btn {
     display: flex;
     flex-direction: column;

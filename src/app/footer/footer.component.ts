@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,12 +10,14 @@ export class FooterComponent implements OnInit {
   footerOptions = [{
     'name': 'Home',
     'active': true,
-    'icon': 'home'
+    'icon': 'home',
+    'routingPath': '/container'
   },
   {
     'name': 'Search',
     'active': false,
-    'icon': 'search'
+    'icon': 'search',
+    'routingPath': '/database'
   }];
 
   toggleIcon(icon: any) {
@@ -23,7 +26,7 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

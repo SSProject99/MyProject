@@ -4,11 +4,13 @@
 
 <div class="footer-container">
     <div *ngFor="let ftrbtn of footerOptions">
-        <button class="ss-ftr-btn" (click)="toggleIcon(ftrbtn.name)"
-            [ngClass]="ftrbtn.active ? 'ss-ftr-act' : 'ss-ftr-inact'">
-            <span class="material-symbols-rounded ss-icons" *ngIf="!ftrbtn.active">{{ftrbtn.icon}}</span>
-            <i class="fa fa-{{ftrbtn.icon}} ss-icons" *ngIf="ftrbtn.active"></i>
-            <span class="ss-ftr-btn-name">{{ftrbtn.name}}</span>
-        </button>
+        <a [routerLink]="ftrbtn.routingPath" class="footer-link">
+            <button class="ss-ftr-btn" (click)="toggleIcon(ftrbtn.name)"
+                [ngClass]="ftrbtn.active ? 'ss-ftr-act' : 'ss-ftr-inact'">
+                <span class="material-symbols-rounded ss-icons" *ngIf="!ftrbtn.active">{{ftrbtn.icon}}</span>
+                <i class="fa fa-{{ftrbtn.icon}} ss-icons" *ngIf="ftrbtn.active"></i>
+                <span class="ss-ftr-btn-name">{{ftrbtn.name}}</span>
+            </button>
+        </a>
     </div>
 </div>

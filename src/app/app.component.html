@@ -1,9 +1,8 @@
 <div class="home-view">
-    <app-database></app-database>
-    <!-- <app-contentbox></app-contentbox> -->
-    <app-container></app-container>
-    <app-resultbox *ngIf="getShowResultboxValueApp()"></app-resultbox>
-    <!-- {{showResultbox}}SS -->
+    <!-- <app-database></app-database> -->
+    <!-- <app-container></app-container> -->
+    <router-outlet></router-outlet>
+    <app-resultbox *ngIf="getShowResultboxValueApp()"></app-resultbox> 
 </div>
-<!-- <button [(ngModel)]="showResultbox">Z</button> -->
+
 <app-footer></app-footer>

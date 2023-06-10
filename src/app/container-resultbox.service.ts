@@ -5,11 +5,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ContainerResultboxService {
-  // private showResultboxContainer = new BehaviorSubject<any>('');
-
-  // private encryptedValue = new BehaviorSubject<any>('');
-  // encryptedValue$ = this.encryptedValue.asObservable();
-
   private showResultbox!: boolean;
   private encryptedValue!: boolean;
   encryptedValueUpdated = new EventEmitter<string>();

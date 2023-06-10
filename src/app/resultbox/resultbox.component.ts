@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ContainerResultboxService } from '../container-resultbox.service';
 
 @Component({
   selector: 'app-resultbox',
@@ -7,9 +8,16 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ResultboxComponent implements OnInit {
 
+  constructor(private containerResultboxService : ContainerResultboxService) {}
+
   resultHeading = "Result";
   copyIcon = "content_copy"
   copyMessage = "Copy result";
+  encryptedText: any;
+
+  // getEncryptedValueApp(): any{
+  //   this.encryptedText = this.containerResultboxService.getEncryptedValue();
+  // }
 
   inputIsEmpty(inputValue: any) {
     return inputValue == null || inputValue == "" || inputValue == undefined;
@@ -35,16 +43,19 @@ export class ResultboxComponent implements OnInit {
       if (selection !== null) {
         selection.removeAllRanges();
       }
-
       // For Moble devices
       copyText.select();
       copyText.setSelectionRange(0, 99999); // For mobile devices
       navigator.clipboard.writeText(copyText.value);
     }
   };
-  constructor() { }
+
 
   ngOnInit(): void {
+    this.encryptedText = this.containerResultboxService.getEncryptedValue();
+    this.containerResultboxService.encryptedValueUpdated.subscribe(value => {
+      this.encryptedText = value;
+    });
   }
 
 }

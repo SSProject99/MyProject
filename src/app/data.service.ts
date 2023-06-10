@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
   private fetchDataURL = 'http://localhost/AngularJSDatabase/AngularJSDatabase/fetchData.php';
   private insertDataURL = 'http://localhost/AngularJSDatabase/AngularJSDatabase/insertData.php';

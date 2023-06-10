@@ -3,7 +3,7 @@
     <textarea [(ngModel)]="inputText" #inputTextNode></textarea>
     <div class="action-box">
         <button (click)="clearInput()"><span class="material-symbols-outlined">cancel</span>Clear</button>
-        <button (click)="encryptInput()"><span class="material-symbols-outlined">lock</span>Encrypt</button>
-        <button (click)="decryptInput()"><span class="material-symbols-outlined">no_encryption</span>Decrypt</button>
+        <button (click)="encryptInput(inputTextNode)"><span class="material-symbols-outlined">lock</span>Encrypt</button>
+        <button (click)="decryptInput(inputTextNode)"><span class="material-symbols-outlined">no_encryption</span>Decrypt</button>
     </div>
 </div>

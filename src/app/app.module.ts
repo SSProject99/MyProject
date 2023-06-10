@@ -12,6 +12,7 @@ import { ResultboxComponent } from './resultbox/resultbox.component';
 import { DatabaseComponent } from './database/database.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
+import { DatacouponComponent } from './datacoupon/datacoupon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     ContainerComponent,
     ResultboxComponent,
     DatabaseComponent,
-    HomepageComponent
+    HomepageComponent,
+    DatacouponComponent
   ],
   imports: [
     BrowserModule,

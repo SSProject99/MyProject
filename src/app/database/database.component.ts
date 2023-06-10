@@ -6,6 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './database.component.html',
   styleUrls: ['./database.component.css']
 })
+
 export class DatabaseComponent implements OnInit {
   data!: any[];
   ngNameCol: any;

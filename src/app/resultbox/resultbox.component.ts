@@ -55,6 +55,8 @@ export class ResultboxComponent implements OnInit {
     this.encryptedText = this.containerResultboxService.getEncryptedValue();
     this.containerResultboxService.encryptedValueUpdated.subscribe(value => {
       this.encryptedText = value;
+      this.copyIcon = "content_copy"
+      this.copyMessage = "Copy result";
     });
   }
 

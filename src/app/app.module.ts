@@ -11,6 +11,7 @@ import { ContainerComponent } from './container/container.component';
 import { ResultboxComponent } from './resultbox/resultbox.component';
 import { DatabaseComponent } from './database/database.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomepageComponent } from './homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ContainerComponent,
     ResultboxComponent,
-    DatabaseComponent
+    DatabaseComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

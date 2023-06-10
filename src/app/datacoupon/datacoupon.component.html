@@ -1,0 +1,20 @@
+
+<div class="data-container">
+    <div class="couponbox" *ngFor="let video of videoObject">
+        <div class="iframe-container">
+            <iframe class="responsive-iframe" src="https://youtu.be/G62HrubdD6o" allowfullscreen></iframe>
+        </div>
+        <div class="metadata">
+            <div class="metadata-title">
+                <h4>{{video.videoName}}</h4>
+            </div>
+            <p >Video description</p>
+        </div>
+        <div class="watchnow">
+            <a class="watchnow-link" href="https://www.youtube.com/embed/NgBoMJy386M">
+                <span class="material-symbols-rounded">play_circle</span>
+            </a>
+        </div>
+    </div>
+</div>
+

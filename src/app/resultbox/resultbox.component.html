@@ -1,6 +1,6 @@
 <div class="container-box">
     <h3>{{resultHeading}}</h3>
-    <textarea  [(ngModel)]="encryptedText" #copyTextVal></textarea>
+    <textarea [(ngModel)]="encryptedText" #copyTextVal cols="30" rows="8"></textarea>
     <div class="result-action-box">
         <button (click)="copyResult(copyTextVal)">
             <span class="material-symbols-outlined">{{copyIcon}}</span>

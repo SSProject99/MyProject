@@ -1,4 +1,8 @@
 <div class="home-page">
-    <app-container></app-container>
-    <app-resultbox *ngIf="getShowResultboxValueApp()"></app-resultbox> 
+    <div class="encrypt-container">
+        <app-container></app-container>
+    </div>
+    <div class="result-box-container" *ngIf="getShowResultboxValueApp()">
+        <app-resultbox></app-resultbox> 
+    </div>
 </div>

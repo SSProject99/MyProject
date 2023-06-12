@@ -15,10 +15,6 @@ export class ResultboxComponent implements OnInit {
   copyMessage = "Copy result";
   encryptedText: any;
 
-  // getEncryptedValueApp(): any{
-  //   this.encryptedText = this.containerResultboxService.getEncryptedValue();
-  // }
-
   inputIsEmpty(inputValue: any) {
     return inputValue == null || inputValue == "" || inputValue == undefined;
   }
@@ -50,7 +46,6 @@ export class ResultboxComponent implements OnInit {
     }
   };
 
-
   ngOnInit(): void {
     this.encryptedText = this.containerResultboxService.getEncryptedValue();
     this.containerResultboxService.encryptedValueUpdated.subscribe(value => {
@@ -59,5 +54,4 @@ export class ResultboxComponent implements OnInit {
       this.copyMessage = "Copy result";
     });
   }
-
 }

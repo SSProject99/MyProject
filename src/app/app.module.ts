@@ -13,6 +13,8 @@ import { DatabaseComponent } from './database/database.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DatacouponComponent } from './datacoupon/datacoupon.component';
+import { DatafilterComponent } from './datafilter/datafilter.component';
+import { DatapageComponent } from './datapage/datapage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { DatacouponComponent } from './datacoupon/datacoupon.component';
     ResultboxComponent,
     DatabaseComponent,
     HomepageComponent,
-    DatacouponComponent
+    DatacouponComponent,
+    DatafilterComponent,
+    DatapageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<div class="data-filter-container">
+    <div class="filter-button-container" *ngFor="let filter of filtersObject">
+        <button class="filter-button" (click)="filterSelected(filter.filterName)">
+            <span class="material-symbols-outlined filter-applied-icon" *ngIf="filter.filterName == filterApplied">{{filterAppliedIcon}}</span>
+            {{filter.filterName}}
+        </button>
+    </div>
+</div>

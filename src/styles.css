@@ -9,6 +9,9 @@
 :root {
     --background-lite: rgb(241, 221, 255);
     --background-dark: rgb(35, 7, 54);
+    --background-filter-lite: rgb(248, 242, 253);
+    --filter-button-lite: rgb(245, 232, 255);
+    --filter-button-hover: rgb(252, 248, 255);
     --background-play: rgb(61, 6, 99);
     --font-name: 'Poppins', sans-serif;
     --heading-color: rgb(37, 0, 61);
@@ -34,7 +37,7 @@ button {
     cursor: pointer;
 }
 
-.home-page {
+.home-page-view {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -45,7 +48,7 @@ button {
     border-radius: 12px;
     background: white;
     font-family: var(--font-name);
-    box-shadow: 3px 7px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width:310px){
@@ -54,12 +57,22 @@ button {
     }
 }
 
+@media screen and (max-width:700px){
+    .resultbox-view {
+        margin-top: 10px;
+    } 
+}
+
 @media screen and (min-width:700px){
-    .home-page {
+    .home-page-view {
         flex-direction: row;
     }    
     
-    .encrypt-container, .result-box-container {
+    .encrypt-view, .resultbox-view {
         width: 50%;
+    } 
+
+    .resultbox-view {
+        margin-left: 20px;
     } 
 }

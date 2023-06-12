@@ -1,6 +1,6 @@
 <div class="container-box">
     <h3>{{containerHeading}}</h3>
-    <textarea [(ngModel)]="inputText" #inputTextNode cols="30" rows="8"></textarea>
+    <textarea [(ngModel)]="inputText" [ngModelOptions]="{standalone: true}" cols="30" rows="8" #inputTextNode></textarea>
     <div class="action-box">
         <button (click)="clearInput()"><span class="material-symbols-outlined">cancel</span>Clear</button>
         <button (click)="encryptInput(inputTextNode)"><span class="material-symbols-outlined">lock</span>Encrypt</button>

@@ -1,0 +1,31 @@
+
+
+
+.data-filter-container {
+    display: flex;
+    padding: 3px;
+    width: 100%;
+    align-items: flex-start;
+    background-color: var(--background-filter-lite);
+    border-radius: 50px;
+}
+
+.filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    border: none;
+    background-color: var(--filter-button-lite);
+    margin: 5px;
+}
+
+.filter-button:hover {
+    background-color: var(--filter-button-hover);
+}
+
+.filter-applied-icon {
+    font-size: 15px;
+}

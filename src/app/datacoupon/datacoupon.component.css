@@ -6,12 +6,12 @@
 
 .couponbox {
     position: relative;
-    height: 70px;
+    height: max-content;
     width: 30%;
     overflow: hidden;
     display: flex;
     border-radius: 20px;
-    margin: 10px;
+    margin: 5px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -19,6 +19,10 @@
 .responsive-iframe {
     width:100%;
     height:100px;
+}
+
+.watchnow > button {
+    border: none;
 }
 
 .metadata {
@@ -56,7 +60,7 @@
     }
 }
 
-@media screen and (min-width:700px) and (max-width:900px){
+@media screen and (min-width:700px) {
     .couponbox {
         width: 40%;
     }

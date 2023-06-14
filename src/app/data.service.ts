@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 
 export class DataService {
-  private fetchDataURL = 'http://localhost/WatchXDatabase/fetchDataWatchX.php';
-  private insertDataURL = 'http://localhost/WatchXDatabase/insertDataWatchX.php';
+  private fetchDataURL = 'http://localhost/WatchXDatabase/WatchXDatabase/fetchDataWatchX.php';
+  private insertDataURL = 'http://localhost/WatchXDatabase/WatchXDatabase/insertDataWatchX.php';
 
   constructor(private http: HttpClient) { }
 

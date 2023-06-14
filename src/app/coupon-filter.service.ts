@@ -13,9 +13,5 @@ export class CouponFilterService {
     this.filterValueUpdated.emit(value);
   }
 
-  getFilterValue(): any {
-    return this.selectedFilterValue;
-  }
-
   constructor() { }
 }

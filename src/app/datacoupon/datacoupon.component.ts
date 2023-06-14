@@ -18,6 +18,11 @@ export class DatacouponComponent implements OnInit {
     { "videoName": "BAAHUBALI-2", "videoLink": "https://youtu.be/G62HrubdD6o", "couponType": "Video" },
     { "videoName": "KGF-2", "videoLink": "https://www.youtube.com/embed/rLWOAxTiiGs", "couponType": "Text" },
     { "videoName": "Ala Vaikunthapurramuloo", "videoLink": "https://www.youtube.com/embed/teo-nyzA0ZU", "couponType": "URL" },
+    { "videoName": "Magadheera", "videoLink": "https://www.youtube.com/embed/C_Cp0uYBmPY", "couponType": "Text" },
+    { "videoName": "RRR", "videoLink": "https://youtu.be/NgBoMJy386M", "couponType": "Video" },
+    { "videoName": "BAAHUBALI-2", "videoLink": "https://youtu.be/G62HrubdD6o", "couponType": "Video" },
+    { "videoName": "KGF-2", "videoLink": "https://www.youtube.com/embed/rLWOAxTiiGs", "couponType": "Text" },
+    { "videoName": "Ala Vaikunthapurramuloo", "videoLink": "https://www.youtube.com/embed/teo-nyzA0ZU", "couponType": "URL" },
     { "videoName": "Magadheera", "videoLink": "https://www.youtube.com/embed/C_Cp0uYBmPY", "couponType": "Text" }
   ];
 
@@ -46,7 +51,7 @@ export class DatacouponComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.filterValue = this.couponFilterService.getFilterValue();
+    this.filterValue = "All";
     this.couponFilterService.filterValueUpdated.subscribe(value => {
       this.filterValue = value;
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContainerResultboxService } from '../container-resultbox.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-container',
@@ -8,12 +9,13 @@ import { ContainerResultboxService } from '../container-resultbox.service';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor(private containerResultboxService : ContainerResultboxService) {}
+  constructor(private containerResultboxService : ContainerResultboxService, private dataService : DataService) {}
 
+  data! : any[];
   containerHeading = "Container heading";
-  inputText = "";
-  resultText = "";
-  reverseText = "";
+  inputText : any;
+  resultText : any;
+  reverseText : any;
 
   clearInput() {
     this.inputText = "";
@@ -33,6 +35,8 @@ export class ContainerComponent implements OnInit {
     } else {      
       this.containerResultboxService.setShowResultboxValue(false);
     }
+
+    this.onSubmit();
   }
 
   decryptInput(inputTextNode: any) {
@@ -59,8 +63,34 @@ export class ContainerComponent implements OnInit {
     }).join('');
   }
 
-
-  ngOnInit(): void {
+  
+  displayDataFromDB() {
+    this.dataService.getData().subscribe(
+      (response) => {
+        console.log(response);
+        this.data = response;
+      },
+      (error) => {
+        console.log('Error retrieving data:', error);
+      }
+    );
   }
 
+  onSubmit(): void {
+    const data = {
+      WatchXDataVal: this.resultText
+    };
+
+    this.dataService.insertData(data).subscribe(
+      (response) => {
+        console.log('Data inserted successfully:', response);
+      },
+      (error) => {
+        console.log('Error inserting data:', error);
+      }
+    );
+  }
+  ngOnInit(): void {
+    this.displayDataFromDB();
+  }
 }

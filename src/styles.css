@@ -10,7 +10,7 @@
     --background-lite: rgb(241, 221, 255);
     --background-dark: rgb(35, 7, 54);
     --background-filter-lite: rgb(248, 242, 253);
-    --filter-button-lite: rgb(245, 232, 255);
+    --filter-button-lite: rgb(230, 205, 250);
     --filter-button-hover: rgb(252, 248, 255);
     --background-play: rgb(61, 6, 99);
     --font-name: 'Poppins', sans-serif;
@@ -19,9 +19,10 @@
     --button-pri-hover: rgb(89, 19, 136);
     --button-pri-active: rgb(109, 25, 165);
     --text-color: #5f5f5f;
-    --grey-lite: rgb(190, 190, 190);
-    --grey-lite-hover: rgb(172, 172, 172);
-    --grey-lite-active: rgb(136, 136, 136);
+    --inactive-filter-color: #444;
+    --grey-lite: rgb(119, 117, 117);
+    --grey-lite-hover: rgb(136, 134, 134);
+    --grey-lite-active: rgb(165, 164, 164);
 }
 
 body {

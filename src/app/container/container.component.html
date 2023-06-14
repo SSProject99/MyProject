@@ -1,9 +1,13 @@
+<div *ngFor="let item of data">
+    {{ item.WatchXData }}
+</div>
+
 <div class="container-box">
     <h3>{{containerHeading}}</h3>
     <textarea [(ngModel)]="inputText" [ngModelOptions]="{standalone: true}" cols="30" rows="8" #inputTextNode></textarea>
     <div class="action-box">
-        <button (click)="clearInput()"><span class="material-symbols-outlined">cancel</span>Clear</button>
-        <button (click)="encryptInput(inputTextNode)"><span class="material-symbols-outlined">lock</span>Encrypt</button>
-        <button (click)="decryptInput(inputTextNode)"><span class="material-symbols-outlined">no_encryption</span>Decrypt</button>
+        <button class="clear-input" (click)="clearInput()"><span class="material-symbols-outlined">cancel</span>Clear</button>
+        <button class="encrypt-input" (click)="encryptInput(inputTextNode)"><span class="material-symbols-outlined">lock</span>Encrypt</button>
+        <button class="decrypt-input" (click)="decryptInput(inputTextNode)"><span class="material-symbols-outlined">no_encryption</span>Decrypt</button>
     </div>
 </div>

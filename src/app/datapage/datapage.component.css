@@ -1,3 +1,8 @@
+.data-filter-view {
+    background-color:blue;
+    position: relative;
+}
+
 .data-coupon-view {
-    margin-top: 10px;
+    position: relative;
 }

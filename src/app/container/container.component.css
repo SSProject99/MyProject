@@ -55,7 +55,7 @@ textarea:focus {
     touch-action: manipulation;
 }
 
-.action-box>button:first-child {
+.action-box .clear-input{
     position: absolute;
     left: 0;
     margin-left: 0;

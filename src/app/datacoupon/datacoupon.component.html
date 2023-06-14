@@ -1,56 +1,59 @@
-<div [ngSwitch]="data.couponType" *ngFor="let data of dataObject">
-    <div *ngSwitchCase="'Video'" >
-        <div class="data-container data-youtube" *ngIf="filterValue=='Video' || filterValue=='All'">
-            <div class="couponbox">
-                <div class="iframe-container">
-                    <iframe class="responsive-iframe" src="https://youtu.be/G62HrubdD6o" allowfullscreen></iframe>
-                </div>
-                <div class="metadata">
-                    <div class="metadata-title">
-                        <h4>{{data.videoName}}</h4>
+
+<div class="data-coupon-main-container">
+    <div [ngSwitch]="data.couponType" *ngFor="let data of dataObject">
+        <div *ngSwitchCase="'Video'" >
+            <div class="data-container data-youtube" *ngIf="filterValue=='Video' || filterValue=='All'">
+                <div class="couponbox">
+                    <div class="iframe-container">
+                        <iframe class="responsive-iframe" src="https://youtu.be/G62HrubdD6o" allowfullscreen></iframe>
                     </div>
-                    <p>Video description</p>
-                </div>
-                <div class="watchnow">
-                    <a class="watchnow-link" href="{{data.videoLink}}">
-                        <span class="material-symbols-rounded">play_circle</span>
-                    </a>
+                    <div class="metadata">
+                        <div class="metadata-title">
+                            <h4>{{data.videoName}}</h4>
+                        </div>
+                        <p>Video description</p>
+                    </div>
+                    <div class="watchnow">
+                        <a class="watchnow-link" href="{{data.videoLink}}">
+                            <span class="material-symbols-rounded">play_circle</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div *ngSwitchCase="'Text'">
-        <div class="data-container data-text" *ngIf="filterValue=='Text' || filterValue=='All'">
-            <div class="couponbox">
-                <div class="metadata">
-                    <div class="metadata-title">
-                        <h4 #copyTextVal>{{data.videoName}}</h4>
+    
+    
+        <div *ngSwitchCase="'Text'">
+            <div class="data-container data-text" *ngIf="filterValue=='Text' || filterValue=='All'">
+                <div class="couponbox">
+                    <div class="metadata">
+                        <div class="metadata-title">
+                            <h4 #copyTextVal>{{data.videoName}}</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="watchnow">
-                    <button class="watchnow-link" (click)="copyResult(copyTextVal)">
-                        <span class="material-symbols-outlined">content_copy</span>
-                    </button>
+                    <div class="watchnow">
+                        <button class="watchnow-link" (click)="copyResult(copyTextVal)">
+                            <span class="material-symbols-outlined">content_copy</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div *ngSwitchCase="'URL'">
-        <div class="data-container data-url" *ngIf="filterValue=='Url' || filterValue=='All'">
-            <div class="couponbox">
-                <div class="metadata">
-                    <div class="metadata-title">
-                        <h4>{{data.videoName}}</h4>
+    
+        <div *ngSwitchCase="'URL'">
+            <div class="data-container data-url" *ngIf="filterValue=='Url' || filterValue=='All'">
+                <div class="couponbox">
+                    <div class="metadata">
+                        <div class="metadata-title">
+                            <h4>{{data.videoName}}</h4>
+                        </div>
+                        <p>URL description</p>
                     </div>
-                    <p>URL description</p>
-                </div>
-                <div class="watchnow">
-                    <a class="watchnow-link" href="{{data.videoLink}}">
-                        <span class="material-symbols-rounded">link</span>
-                    </a>
+                    <div class="watchnow">
+                        <a class="watchnow-link" href="{{data.videoLink}}">
+                            <span class="material-symbols-rounded">link</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

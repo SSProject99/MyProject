@@ -1,13 +1,16 @@
 
-
-
 .data-filter-container {
+    position: fixed;
+    top:0;
+    left: 0;
     display: flex;
-    padding: 3px;
+    padding: 10px;
     width: 100%;
     align-items: flex-start;
     background-color: var(--background-filter-lite);
-    border-radius: 50px;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .filter-button {
@@ -26,6 +29,7 @@
     background-color: var(--filter-button-hover);
 }
 
-.filter-applied-icon {
+.filter-icon {
     font-size: 15px;
+    margin-right: 5px;
 }

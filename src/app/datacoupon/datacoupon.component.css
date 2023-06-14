@@ -1,3 +1,9 @@
+
+.data-coupon-main-container {
+    position: relative;
+    margin-top: 50px;
+}
+
 .data-container {
     display: flex;
     flex-wrap: wrap;

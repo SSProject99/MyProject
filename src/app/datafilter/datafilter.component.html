@@ -1,8 +1,8 @@
 <div class="data-filter-container">
-    <div class="filter-button-container" *ngFor="let filter of filtersObject">
-        <button class="filter-button" (click)="filterSelected(filter.filterName)">
-            <span class="material-symbols-outlined filter-applied-icon" *ngIf="filter.filterName == filterApplied">{{filterAppliedIcon}}</span>
-            {{filter.filterName}}
+    <div class="filter-button-container" *ngFor="let filter of filtersObject" >
+        <button class="filter-button" (click)="filterSelected(filter.filterName)" [style.background]="(filter.filterName == filterApplied) ? selectedFilterCol : unselectedFilterCol">
+            <span class="material-symbols-outlined filter-icon" [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterIcon}}</span>
+            <span class="filter-button-name" [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterName}}</span>
         </button>
     </div>
 </div>

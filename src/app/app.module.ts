@@ -15,6 +15,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DatacouponComponent } from './datacoupon/datacoupon.component';
 import { DatafilterComponent } from './datafilter/datafilter.component';
 import { DatapageComponent } from './datapage/datapage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { HeaderbarComponent } from './headerbar/headerbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +30,16 @@ import { DatapageComponent } from './datapage/datapage.component';
     HomepageComponent,
     DatacouponComponent,
     DatafilterComponent,
-    DatapageComponent
+    DatapageComponent,
+    HeaderbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

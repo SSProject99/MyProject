@@ -1,8 +1,28 @@
 <div class="data-filter-container">
-    <div class="filter-button-container" *ngFor="let filter of filtersObject" >
-        <button class="filter-button" (click)="filterSelected(filter.filterName)" [style.background]="(filter.filterName == filterApplied) ? selectedFilterCol : unselectedFilterCol">
-            <span class="material-symbols-outlined filter-icon" [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterIcon}}</span>
-            <span class="filter-button-name" [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterName}}</span>
+    <div class="filter-button-container">
+        <button  *ngFor="let filter of filtersObject" class="filter-button" (click)="filterSelected(filter.filterName)"
+            [style.background]="(filter.filterName == filterApplied) ? selectedFilterCol : unselectedFilterCol">
+            <span class="material-symbols-outlined filter-icon"
+                [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterIcon}}</span>
+            <span class="filter-button-name"
+                [style.color]="(filter.filterName == filterApplied) ? 'White' : inactiveFilterColor">{{filter.filterName}}</span>
         </button>
     </div>
+
+    <div class="coupon-sorter-container">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>timeline</mat-icon>
+                <span>Recent</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>sort_by_alpha</mat-icon>
+                <span>Sort by name</span>
+            </button>
+        </mat-menu>
+    </div>
+
 </div>

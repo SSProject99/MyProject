@@ -1,7 +1,6 @@
-
 <div class="data-coupon-main-container">
     <div [ngSwitch]="data.couponType" *ngFor="let data of decryptedDataObject">
-        <div *ngSwitchCase="'YoutubeLink'" >
+        <div *ngSwitchCase="'YoutubeLink'">
             <div class="data-container data-youtube" *ngIf="filterValue=='Video' || filterValue=='All'">
                 <div class="couponbox">
                     <div class="iframe-container">
@@ -14,15 +13,30 @@
                         <p>Video description</p>
                     </div>
                     <div class="watchnow">
-                        <a class="watchnow-link" href="{{data.videoLink}}">
+                        <a class="watchnow-link" href="{{data.WatchXData}}">
                             <span class="material-symbols-rounded">play_circle</span>
                         </a>
+                    </div>
+                    <div class="data-actions">
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="menu-item" (click)="deleteDataFromDatabase()">
+                                <span class="material-symbols-rounded menu-item-icon">delete</span>
+                                <span class="menu-item-name">Delete</span>
+                            </button>
+                            <button mat-menu-item class="menu-item">
+                                <span class="material-symbols-rounded menu-item-icon">content_copy</span>
+                                <span class="menu-item-name">Copy</span>
+                            </button>
+                        </mat-menu>
                     </div>
                 </div>
             </div>
         </div>
-    
-    
+
+
         <div *ngSwitchCase="'NormalText'">
             <div class="data-container data-text" *ngIf="filterValue=='Text' || filterValue=='All'">
                 <div class="couponbox">
@@ -36,10 +50,25 @@
                             <span class="material-symbols-outlined">content_copy</span>
                         </button>
                     </div>
+                    <div class="data-actions">
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="menu-item" (click)="deleteDataFromDatabase()">
+                                <span class="material-symbols-rounded menu-item-icon">delete</span>
+                                <span class="menu-item-name">Delete</span>
+                            </button>
+                            <button mat-menu-item class="menu-item">
+                                <span class="material-symbols-rounded menu-item-icon">content_copy</span>
+                                <span class="menu-item-name">........</span>
+                            </button>
+                        </mat-menu>
+                    </div>
                 </div>
             </div>
         </div>
-    
+
         <div *ngSwitchCase="'URL'">
             <div class="data-container data-url" *ngIf="filterValue=='Url' || filterValue=='All'">
                 <div class="couponbox">
@@ -50,9 +79,24 @@
                         <p>URL description</p>
                     </div>
                     <div class="watchnow">
-                        <a class="watchnow-link" href="{{data.videoLink}}">
+                        <a class="watchnow-link" href="{{data.WatchXData}}">
                             <span class="material-symbols-rounded">link</span>
                         </a>
+                    </div>
+                    <div class="data-actions">
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="menu-item" (click)="deleteDataFromDatabase()">
+                                <span class="material-symbols-rounded menu-item-icon">delete</span>
+                                <span class="menu-item-name">Delete</span>
+                            </button>
+                            <button mat-menu-item class="menu-item">
+                                <span class="material-symbols-rounded menu-item-icon">content_copy</span>
+                                <span class="menu-item-name">Copy</span>
+                            </button>
+                        </mat-menu>
                     </div>
                 </div>
             </div>

@@ -1,16 +1,19 @@
 
 .data-filter-container {
-    position: fixed;
-    top:0;
-    left: 0;
+    /* position: fixed; */
     display: flex;
-    padding: 10px;
-    width: 100%;
-    align-items: flex-start;
-    background-color: var(--background-filter-lite);
+    /* padding: 10px; */
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    background: var(--background-filter-lite);
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
+}
+
+.filter-button-container {
+    display: flex;
 }
 
 .filter-button {
@@ -32,4 +35,8 @@
 .filter-icon {
     font-size: 15px;
     margin-right: 5px;
+}
+
+.coupon-sorter-container {
+
 }

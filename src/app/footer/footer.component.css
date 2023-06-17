@@ -34,7 +34,7 @@
 
 .ss-ftr-btn:active {
     opacity: .5;
-    /* transform: scale(.9); */
+    transform: scale(.9);
 }
 
 .ss-ftr-act {
@@ -42,9 +42,9 @@
     opacity: 1;
 }
 
-.footer-container>a>.material-icons {
-    font-size: 25px;
-}
+/* .footer-container>a>.material-icons {
+    font-size: 22px;
+} */
 
 .ss-ftr-btn-name {
     font-size: 11px;

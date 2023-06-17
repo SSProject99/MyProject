@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CouponFilterService } from '../coupon-filter.service';
+import { MaterialModule } from '../material/material.module';
 @Component({
   selector: 'app-datafilter',
   templateUrl: './datafilter.component.html',
@@ -25,6 +26,8 @@ export class DatafilterComponent implements OnInit {
     this.couponFilterService.setFilterValue(selectedFilterName);
     console.log(selectedFilterName);
   }
+
+  
 
   constructor(private couponFilterService: CouponFilterService) { }
 

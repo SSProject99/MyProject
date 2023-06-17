@@ -1,6 +1,6 @@
 
 <div class="container-box">
-    <h3>{{containerHeading}}</h3>
+    <h3 class="container-box-heading">{{containerHeading}}</h3>
     <textarea [(ngModel)]="inputText" [ngModelOptions]="{standalone: true}" cols="30" rows="8" #inputTextNode></textarea>
     <div class="action-box">
         <button class="clear-input" (click)="clearInput()"><span class="material-symbols-outlined">cancel</span>Clear</button>

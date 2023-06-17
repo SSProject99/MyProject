@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CouponFilterService } from '../coupon-filter.service';
 import { DataService } from '../data.service';
+
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-datacoupon',
   templateUrl: './datacoupon.component.html',
@@ -8,13 +10,21 @@ import { DataService } from '../data.service';
 })
 export class DatacouponComponent implements OnInit {
 
-  constructor(private couponFilterService : CouponFilterService, private dataService : DataService) { }
+  constructor(private couponFilterService: CouponFilterService,
+    private dataService: DataService,
+    private _snackBar: MatSnackBar) { }
 
-  filterValue : any;
-  data:any = [];
-  reverseText : any;
-  resultText : any;
-  decryptedDataObject:any = [];
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000
+    });
+  }
+
+  filterValue: any;
+  data: any = [];
+  reverseText: any;
+  resultText: any;
+  decryptedDataObject: any = [];
 
   dataObject = [
     { "videoName": "RRR", "videoLink": "https://youtu.be/NgBoMJy386M", "couponType": "Video" },
@@ -30,6 +40,7 @@ export class DatacouponComponent implements OnInit {
   ];
 
   copyResult(copyText: any) {
+    this.openSnackBar("Text copied to clipboard", "OK")
     console.log(copyText);
     // For Desktop/System devices
     var range = document.createRange();
@@ -66,24 +77,25 @@ export class DatacouponComponent implements OnInit {
     );
   };
 
-  
-  decryptInput(data : any) {
-    for(let index in data){
+
+  decryptInput(data: any) {
+    for (let index in data) {
       var cipherText = data[index].WatchXData.replace(/\n/gmi, '\n');
       this.reverseText = this.caesarCipher(cipherText, -6);
       var decryptedValue = this.reverseText.split("").reverse().join("");
       var dataType = this.checkInputType(decryptedValue);
-      console.log(index, data[index].WatchXData,decryptedValue, dataType);
-      let newData = { WatchXData: decryptedValue, couponType: dataType};
+      console.log(index, data[index].TimeStamp, data[index].WatchXData, decryptedValue, dataType);
+      let newData = { TimeStamp: data[index].TimeStamp, WatchXData: decryptedValue, couponType: dataType };
       this.decryptedDataObject.push(newData);
     }
+    this.sortByTimeStamp();
   };
 
   checkInputType(input: string): string {
     const youtubeLinkPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
-    const urlPattern = /^(https?:\/\/)?([^\s/$.?#].[^\s]*)$/;
-    const alphabeticPattern = /^[A-Za-z]+$/;
-  
+    const urlPattern = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    const alphabeticPattern = /^[A-Za-z0-9]+$/;
+
     if (youtubeLinkPattern.test(input)) {
       return "YoutubeLink";
     } else if (urlPattern.test(input)) {
@@ -94,7 +106,15 @@ export class DatacouponComponent implements OnInit {
       return "Unknown";
     }
   }
-  
+
+  sortByTimeStamp() {
+    this.decryptedDataObject.sort((a: any, b: any) => {
+      const timestampA = new Date(a.TimeStamp).getTime();
+      const timestampB = new Date(b.TimeStamp).getTime();
+      return timestampB - timestampA;
+    });
+  }
+
   caesarCipher(encrText: any, key: any): any {
     var n = 26;
     if (key < 0) {
@@ -110,6 +130,9 @@ export class DatacouponComponent implements OnInit {
     }).join('');
   }
 
+  deleteDataFromDatabase(){
+
+  }
 
   ngOnInit(): void {
     this.displayDataFromDB();

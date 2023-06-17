@@ -48,8 +48,15 @@ button {
     padding: 12px 9px;
     border-radius: 12px;
     background: white;
-    font-family: var(--font-name);
     box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container-box-heading {
+    font-family: var(--font-name);
+}
+
+mat-icon {
+    color: var(--text-color);
 }
 
 @media screen and (max-width:310px){

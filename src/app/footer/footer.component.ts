@@ -13,9 +13,9 @@ export class FooterComponent implements OnInit {
     'routingPath': '/container'
   },
   {
-    'name': 'Search',
+    'name': 'Library',
     'active': false,
-    'icon': 'search',
+    'icon': 'book',
     'routingPath': '/datapage'
   }];
 

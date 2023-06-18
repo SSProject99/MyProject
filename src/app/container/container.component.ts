@@ -77,11 +77,12 @@ export class ContainerComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const data = {
+    const dataSubmit = {
       WatchXDataVal: this.resultText
     };
+    console.log(dataSubmit)
 
-    this.dataService.insertData(data).subscribe(
+    this.dataService.insertData(dataSubmit).subscribe(
       (response) => {
         console.log('Data inserted successfully:', response);
       },
@@ -90,6 +91,7 @@ export class ContainerComponent implements OnInit {
       }
     );
   }
+
   ngOnInit(): void {
     this.displayDataFromDB();
   }

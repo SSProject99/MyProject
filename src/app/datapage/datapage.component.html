@@ -1,5 +1,5 @@
 <div class="data-page-view">
-    <div class="data-filter-view">
+    <div class="data-filter-view"  [ngClass]="{ 'scrolled': isScrolled }">
         <app-datafilter></app-datafilter>
     </div>
     <div class="data-coupon-view">

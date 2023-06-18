@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-datapage',
@@ -10,6 +10,13 @@ export class DatapageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isScrolled: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.pageYOffset > 70;
   }
 
 }

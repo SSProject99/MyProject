@@ -1,14 +1,16 @@
 
 .data-filter-container {
-    /* position: fixed; */
+    position: -webkit-sticky;
+    position: sticky;
     display: flex;
+    top: 0;
     /* padding: 10px; */
     align-items: center;
     justify-content: space-between;
-    width: 90%;
-    background: var(--background-filter-lite);
+    width: 100%;
+    /* background: var(--background-filter-lite); */
     overflow: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
     z-index: 1;
 }
 
@@ -23,8 +25,8 @@
     padding: 5px 12px;
     border-radius: 50px;
     font-size: 12px;
-    border: none;
-    background-color: var(--filter-button-lite);
+    border: 1px solid var(--button-pri-hover);
+    background: white;
     margin: 5px;
 }
 

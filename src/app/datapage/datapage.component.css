@@ -1,7 +1,19 @@
-.data-filter-view {
-    background-color:blue;
-    position: relative;
+.data-page-view {
+    margin-top: 50px;
 }
+
+.data-filter-view {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    transition: .3s;
+}
+
+.data-filter-view.scrolled {
+    width: 100%;
+    box-shadow: 0 0 12px rgba( 0, 0, 0, .4);
+    background-color: var(--white-color); /* Change the background color to your desired color */
+  }
 
 .data-coupon-view {
     position: relative;

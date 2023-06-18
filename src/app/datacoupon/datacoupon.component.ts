@@ -3,6 +3,7 @@ import { CouponFilterService } from '../coupon-filter.service';
 import { DataService } from '../data.service';
 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-datacoupon',
   templateUrl: './datacoupon.component.html',
@@ -12,7 +13,8 @@ export class DatacouponComponent implements OnInit {
 
   constructor(private couponFilterService: CouponFilterService,
     private dataService: DataService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private dialog: MatDialog) { }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
@@ -142,6 +144,14 @@ export class DatacouponComponent implements OnInit {
       return c;
     }).join('');
   }
+
+  // deleteConfirmationDialog() {
+  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 
   deleteDataFromDatabase(dataID: any): void {
     const pattern = /(\d+)$/;

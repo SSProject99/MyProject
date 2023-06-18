@@ -16,10 +16,12 @@
     width: 30%;
     overflow: hidden;
     display: flex;
-    border-radius: 10px;
-    margin: 5px;
+    margin-top: -1px;
+    border: 1px solid rgba(0,0,0,0.2);
+    /* border-radius: 10px; */
+    /* margin: 5px; */
     background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    /* box-shadow: 0 0 3px rgba(0,0,0,0.2); */
 }
 
 .responsive-iframe {

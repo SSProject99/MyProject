@@ -64,7 +64,7 @@ export class DatacouponComponent implements OnInit {
     navigator.clipboard.writeText(copyText.value);
   };
 
-  displayDataFromDB() {
+  displayDataFromDatabase() {
     this.dataService.getData().subscribe(
       (response) => {
         console.log(response);
@@ -84,8 +84,9 @@ export class DatacouponComponent implements OnInit {
       this.reverseText = this.caesarCipher(cipherText, -6);
       var decryptedValue = this.reverseText.split("").reverse().join("");
       var dataType = this.checkInputType(decryptedValue);
-      console.log(index, data[index].TimeStamp, data[index].WatchXData, decryptedValue, dataType);
-      let newData = { TimeStamp: data[index].TimeStamp, WatchXData: decryptedValue, couponType: dataType };
+      var couponViewId = this.setId(dataType) + data[index].KeyWatchXData;
+      console.log(index, data, data[index].TimeStamp, data[index].WatchXData, decryptedValue, dataType);
+      let newData = { KeyWatchXData: couponViewId, TimeStamp: data[index].TimeStamp, WatchXData: decryptedValue, couponType: dataType };
       this.decryptedDataObject.push(newData);
     }
     this.sortByTimeStamp();
@@ -102,6 +103,18 @@ export class DatacouponComponent implements OnInit {
       return "URL";
     } else if (alphabeticPattern.test(input)) {
       return "NormalText";
+    } else {
+      return "Unknown";
+    }
+  }
+
+  setId(dataType: any): any {
+    if (dataType == "YoutubeLink") {
+      return "YTLINK";
+    } else if (dataType == "URL") {
+      return "URL";
+    } else if (dataType == "NormalText") {
+      return "TEXT";
     } else {
       return "Unknown";
     }
@@ -130,12 +143,27 @@ export class DatacouponComponent implements OnInit {
     }).join('');
   }
 
-  deleteDataFromDatabase(){
-
+  deleteDataFromDatabase(dataID: any): void {
+    const pattern = /(\d+)$/;
+    var dataCouponID: any;
+    const matches = dataID.match(pattern);
+    if (matches && matches.length > 1) {
+      dataCouponID = matches[1];
+    }
+    this.dataService.deleteData(dataCouponID).subscribe(
+      (response) => {
+        this.decryptedDataObject = this.decryptedDataObject.filter((obj: any) => obj.KeyWatchXData != dataID);
+        console.log(this.decryptedDataObject);
+        console.log('Data deleted successfully:', response);
+      },
+      (error) => {
+        console.log('Error inserting data:', error);
+      }
+    );
   }
 
   ngOnInit(): void {
-    this.displayDataFromDB();
+    this.displayDataFromDatabase();
     this.filterValue = "All";
     this.couponFilterService.filterValueUpdated.subscribe(value => {
       this.filterValue = value;

@@ -12,7 +12,7 @@ export class ContainerComponent implements OnInit {
   constructor(private containerResultboxService : ContainerResultboxService, private dataService : DataService) {}
 
   data! : any[];
-  containerHeading = "Container heading";
+  containerHeading = "Text here to encrypt";
   inputText : any;
   resultText : any;
   reverseText : any;

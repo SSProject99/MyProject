@@ -25,7 +25,7 @@
     padding: 5px 12px;
     border-radius: 50px;
     font-size: 12px;
-    border: 1px solid var(--button-pri-hover);
+    border: none;
     background: white;
     margin: 5px;
 }
@@ -37,6 +37,11 @@
 .filter-icon {
     font-size: 15px;
     margin-right: 5px;
+}
+
+.filter-action-icon {
+    font-size: 20px;
+    color: var(--menu-item-color);
 }
 
 .coupon-sorter-container {

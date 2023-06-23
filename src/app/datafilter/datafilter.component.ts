@@ -17,8 +17,8 @@ export class DatafilterComponent implements OnInit {
 
   filterAppliedIcon = 'check';
   filterApplied = "All";
-  unselectedFilterCol = "var(--filter-button-lite)";
   selectedFilterCol = "var(--button-pri-hover)";
+  unselectedFilterCol = "var(--filter-button-lite)";
   inactiveFilterColor = "var(--inactive-filter-color)"
 
   filterSelected(selectedFilterName: any) {

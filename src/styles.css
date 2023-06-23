@@ -7,7 +7,7 @@
 }
 
 :root {
-    --background-lite: rgb(246, 233, 255);
+    --background-lite: rgb(249, 241, 255);
     --background-dark: rgb(35, 7, 54);
     --background-filter-lite: rgb(248, 242, 253);
     --filter-button-lite: rgb(230, 205, 250);
@@ -15,15 +15,17 @@
     --background-play: rgb(61, 6, 99);
     --font-name: 'Poppins', sans-serif;
     --heading-color: rgb(37, 0, 61);
-    --button-pri: rgb(55, 11, 85);
-    --button-pri-hover: rgb(89, 19, 136);
-    --button-pri-active: rgb(109, 25, 165);
-    --text-color: #5f5f5f;
-    --inactive-filter-color: #444;
+    --button-pri: rgb(90, 21, 136);
+    --button-pri-hover: rgb(112, 29, 167);
+    --button-pri-active: rgb(133, 32, 201);
+    --text-color: #313131;
+    --inactive-filter-color: rgb(112, 29, 167);
     --grey-lite: rgb(119, 117, 117);
     --grey-lite-hover: rgb(136, 134, 134);
     --grey-lite-active: rgb(165, 164, 164);
-    --white-color: rgba(255,255,255,1)
+    --white-color: rgba(255,255,255,1);
+    --menu-item-color: #616161;
+    --side-icon-color: #616161;
 }
 
 body {
@@ -32,11 +34,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
+    color: var(--text-color);
 }
 
+a,
 button {
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-user-select: none;
 }
 
 .home-page-view {
@@ -49,7 +56,7 @@ button {
     padding: 12px 9px;
     border-radius: 12px;
     background: white;
-    box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
 
 .container-box-heading {

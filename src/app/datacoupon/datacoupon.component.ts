@@ -97,7 +97,7 @@ export class DatacouponComponent implements OnInit {
   checkInputType(input: string): string {
     const youtubeLinkPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
     const urlPattern = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
-    const alphabeticPattern = /^[A-Za-z0-9]+$/;
+    const alphabeticPattern = /^[A-Za-z0-9 \n]+$/;
 
     if (youtubeLinkPattern.test(input)) {
       return "YoutubeLink";

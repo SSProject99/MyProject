@@ -2,15 +2,15 @@
     <div [ngSwitch]="data.couponType" *ngFor="let data of decryptedDataObject">
         <div *ngSwitchCase="'YoutubeLink'" id="YTLINK{{data.KeyWatchXData}}">
             <div class="data-container data-youtube" *ngIf="filterValue=='Video' || filterValue=='All'">
-                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()"
-                    (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd()">
-                    <div class="checkbox" *ngIf="selectAll">
-                        <input type="checkbox" name="" id="">
+                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()">
+                    <div class="checkbox custom-checkbox" *ngIf="selectAll">
+                        <input type="checkbox" [checked]="isCheckboxSelected(data.KeyWatchXData)"
+                            (click)="toggleCheckbox(data.KeyWatchXData)">
                     </div>
                     <div class="iframe-container">
                         <iframe class="responsive-iframe" src="https://youtu.be/G62HrubdD6o" allowfullscreen></iframe>
                     </div>
-                    <div class="metadata">
+                    <div class="metadata" (click)="selectCoupon(data.KeyWatchXData)">
                         <div class="metadata-title">
                             <h4 #copyTextVal>{{data.WatchXData}}</h4>
                         </div>
@@ -44,14 +44,12 @@
 
         <div *ngSwitchCase="'NormalText'" id="TEXT{{data.KeyWatchXData}}">
             <div class="data-container data-text" *ngIf="filterValue=='Text' || filterValue=='All'">
-                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()"
-                    (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd()">
+                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()">
                     <div class="checkbox custom-checkbox" *ngIf="selectAll">
                         <input type="checkbox" [checked]="isCheckboxSelected(data.KeyWatchXData)"
                             (click)="toggleCheckbox(data.KeyWatchXData)">
                     </div>
-                    <div class="metadata" (click)="selectCoupon(data.KeyWatchXData)"
-                        (touchstart)="selectCoupon(data.KeyWatchXData)">
+                    <div class="metadata" (click)="selectCoupon(data.KeyWatchXData)">
                         <div class="metadata-title">
                             <h4 #copyTextVal>{{data.WatchXData}}</h4>
                         </div>
@@ -83,14 +81,12 @@
 
         <div *ngSwitchCase="'URL'" id="URL{{data.KeyWatchXData}}">
             <div class="data-container data-url" *ngIf="filterValue=='Url' || filterValue=='All'">
-                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()"
-                    (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd()">
+                <div class="couponbox" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()">
                     <div class="checkbox custom-checkbox" *ngIf="selectAll">
                         <input type="checkbox" [checked]="isCheckboxSelected(data.KeyWatchXData)"
                             (click)="toggleCheckbox(data.KeyWatchXData)">
                     </div>
-                    <div class="metadata" (click)="selectCoupon(data.KeyWatchXData)"
-                        (touchstart)="selectCoupon(data.KeyWatchXData)">
+                    <div class="metadata" (click)="selectCoupon(data.KeyWatchXData)">
                         <div class="metadata-title">
                             <h4 #copyTextVal>{{data.WatchXData}}</h4>
                         </div>

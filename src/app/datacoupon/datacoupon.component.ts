@@ -26,7 +26,7 @@ export class DatacouponComponent implements OnInit {
   data: any = [];
   reverseText: any;
   resultText: any;
-  selectAll: any = false;
+  selectAll: any = true;
   decryptedDataObject: any = [];
 
   dataObject = [
@@ -187,12 +187,14 @@ export class DatacouponComponent implements OnInit {
     clearTimeout(this.timeoutId);
   }
 
-  onTouchStart(event: TouchEvent) {
+  onTouchStart(event: TouchEvent, keyWatchXData: number) {
     event.preventDefault();
+    event.stopPropagation();
     this.timeoutId = setTimeout(() => {
       this.selectAll = true;
       console.log('Long press event');
     }, this.longPressDuration);
+    this.selectCoupon(keyWatchXData);
   }
 
   onTouchEnd() {
@@ -214,14 +216,17 @@ export class DatacouponComponent implements OnInit {
       this.selectedCheckboxes.add(keyWatchXData);
     }
   }
+  selectedCount:any;
 
   selectCoupon(keyWatchXData: number) {
-    console.log('Selected coupon:', keyWatchXData);
     if (this.selectedCheckboxes.has(keyWatchXData)) {
       this.selectedCheckboxes.delete(keyWatchXData);
     } else {
       this.selectedCheckboxes.add(keyWatchXData);
     }
+    this.selectedCount = this.selectedCheckboxes.size;
+    console.log('Selected coupon:', keyWatchXData,this.selectedCheckboxes, this.selectedCount);
+    // https://chat.openai.com/share/fb442150-8f63-46b4-8f75-bfc584204331
   }
 
   ngOnInit(): void {

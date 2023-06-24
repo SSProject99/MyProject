@@ -26,6 +26,6 @@ export class DataService {
   deleteData(dataID: any) {
     console.log(dataID)
     const url = `${this.deleteDataURL}/${dataID}`;
-    return this.http.delete<any>(url);
+    return this.http.post(url, dataID);
   }
 }

@@ -9,6 +9,16 @@
         </button>
     </div>
 
+    <div class="filter-button-container">
+        <button class="filter-button"
+            [style.background]="true ? selectedFilterCol : unselectedFilterCol">
+            <span class="material-symbols-outlined filter-icon"
+                [style.color]="true ? 'White' : inactiveFilterColor">delete</span>
+            <span class="filter-button-name"
+                [style.color]="true ? 'White' : inactiveFilterColor">Delete</span>
+        </button>
+    </div>
+
     <div class="coupon-sorter-container">
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon class="filter-action-icon">tune</mat-icon>

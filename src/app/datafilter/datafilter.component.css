@@ -24,7 +24,7 @@
     align-items: center;
     padding: 5px 12px;
     border-radius: 50px;
-    font-size: 12px;
+    font-size: 13px;
     border: none;
     background: white;
     margin: 5px;
@@ -42,8 +42,4 @@
 .filter-action-icon {
     font-size: 20px;
     color: var(--menu-item-color);
-}
-
-.coupon-sorter-container {
-
 }

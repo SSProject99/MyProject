@@ -26,6 +26,7 @@ export class DatacouponComponent implements OnInit {
   data: any = [];
   reverseText: any;
   resultText: any;
+  selectAll: any = false;
   decryptedDataObject: any = [];
 
   dataObject = [
@@ -170,6 +171,57 @@ export class DatacouponComponent implements OnInit {
         console.log('Error inserting data:', error);
       }
     );
+  }
+
+  private timeoutId: any;
+  private longPressDuration = 1000; // Set the duration for a long press in milliseconds
+
+  onMouseDown() {
+    this.timeoutId = setTimeout(() => {
+      this.selectAll = true;
+      console.log('Long press event');
+    }, this.longPressDuration);
+  }
+
+  onMouseUp() {
+    clearTimeout(this.timeoutId);
+  }
+
+  onTouchStart(event: TouchEvent) {
+    event.preventDefault();
+    this.timeoutId = setTimeout(() => {
+      this.selectAll = true;
+      console.log('Long press event');
+    }, this.longPressDuration);
+  }
+
+  onTouchEnd() {
+    clearTimeout(this.timeoutId);
+  }
+
+  selectedCheckboxes: Set<number> = new Set<number>();
+
+  // Rest of your component code
+
+  isCheckboxSelected(keyWatchXData: number): boolean {
+    return this.selectedCheckboxes.has(keyWatchXData);
+  }
+
+  toggleCheckbox(keyWatchXData: number) {
+    if (this.selectedCheckboxes.has(keyWatchXData)) {
+      this.selectedCheckboxes.delete(keyWatchXData);
+    } else {
+      this.selectedCheckboxes.add(keyWatchXData);
+    }
+  }
+
+  selectCoupon(keyWatchXData: number) {
+    console.log('Selected coupon:', keyWatchXData);
+    if (this.selectedCheckboxes.has(keyWatchXData)) {
+      this.selectedCheckboxes.delete(keyWatchXData);
+    } else {
+      this.selectedCheckboxes.add(keyWatchXData);
+    }
   }
 
   ngOnInit(): void {

@@ -4,13 +4,11 @@
     position: sticky;
     display: flex;
     top: 0;
-    /* padding: 10px; */
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    /* background: var(--background-filter-lite); */
+    flex-wrap: wrap;
     overflow: auto;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
     z-index: 1;
 }
 

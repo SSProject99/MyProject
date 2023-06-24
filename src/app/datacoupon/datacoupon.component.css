@@ -29,7 +29,7 @@ h4 {
 
 .checkbox {
     display: flex;
-    width: 20%;
+    width: 100px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
